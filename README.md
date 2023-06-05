@@ -7,15 +7,15 @@ The application **social-network-api** allows a user to easily view and interact
 
 Because this application is not deployed, the following walkthrough videos  demonstrate the **social-network-api** application's functionality:
 
-[social-network-api: Start the server]()
+[social-network-api: Start the server](https://drive.google.com/file/d/18DCuP8teHbPkODeXln6fwLZvapY0i8yP/view)
 
-[social-network-api: Users - GET, POST, PUT, DELETE]()
+[social-network-api: Users - GET, POST, PUT, DELETE](https://drive.google.com/file/d/1E1sc1lQjVf8LP18nwKy82nOwnOYKOF3g/view)
 
-[social-network-api: Thoughts - GET, POST, PUT, DELETE]()
+[social-network-api: Thoughts - GET, POST, PUT, DELETE](https://drive.google.com/file/d/1lOPG9EWdjFZRAfs4_yLex3PmbOmkm14c/view)
 
-[social-network-api: Users' Friend List - POST & DELETE]()
+[social-network-api: Users' Friend List - POST & DELETE](https://drive.google.com/file/d/1HGkDryjhL3RjyDGjIdW4-vsNTevDPXTt/view)
 
-[social-network-api: Reactions to thoughts - PUT & DELETE]()
+[social-network-api: Reactions to thoughts - PUT & DELETE](https://drive.google.com/file/d/1k7tMporKVneuuxLhsoKzvAOlhRhM3lb9/view)
 ## Installation
 
 This application requires Node.JS to be installed. The user should run ```npm install``` in their terminal to load the following npm packages: Express.js (version 4.18.2) and Mongoose (version 7.2.2).
@@ -57,6 +57,13 @@ To POST or DELETE a friend from a user's list, use the following route:
 
 To POST a reaction from a thought, use the following route:
 ```localhost:3001/api/thoughts/:thoughtId/reactions```
+and follow the example
+```
+{
+    "reactionBody": "WOW!!",
+    "username": "lernantino"
+}
+```
 
 To DELETE a reaction from a thought, use the following route:
 ```localhost:3001/api/thoughts/:thoughtId/reactions/:reactionId```
