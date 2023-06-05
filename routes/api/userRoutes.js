@@ -18,7 +18,7 @@ router.route('/:userId')
   .put(updateUser)
   .delete(deleteUser);
 
-// /api/users/:userId/friends/:friendId
+// /api/users/:userId/friends/:friendId - added friend's userId in the URL as per requirements stated for api routes!
 router.route('/:userId/friends/:friendId')
   .post(addFriend)
   .delete(removeFriend);

@@ -59,7 +59,7 @@ module.exports = {
     }
   },
   
-  // Delete a user and associated apps
+  // Delete a user and associated thoughts
   async deleteUser(req, res) {
     try {
       const user = await User.findOneAndDelete({ _id: req.params.userId });
@@ -75,7 +75,7 @@ module.exports = {
     }
   },
 
-    // Adds a friend to a user. This method is unique in that we add the entire body of the friend rather than the ID with the mongodb $addToSet operator.
+    // Adds a friend to a user. This method adds the entire body of the friend rather than just the ID with the mongodb $addToSet operator.
   async addFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
@@ -93,7 +93,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-    // Remove thought reaction. This method finds the thought based on ID. It then updates the reaction array associated with the thought in question by removing it's reactionId from the reactions array.
+    // Remove friend. This method finds the friend based on ID and removes them from the user's friend list.
   async removeFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(

@@ -1,5 +1,6 @@
 const { Schema, Types } = require('mongoose');
 
+//not a model - only a schema to be used for the reaction field's subdocument in the Thought model
 const reactionSchema = new Schema(
   {
     reactionId: {

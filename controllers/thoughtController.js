@@ -2,7 +2,7 @@ const { Thought, User } = require('../models');
 
 module.exports = {
   // Function to get all of the thoughts by invoking the find() method with no arguments.
-  // Then we return the results as JSON, and catch any errors. Errors are sent as JSON with a message and a 500 status code
+  // Return the results as JSON, and catch any errors. Errors are sent as JSON with a message and a 500 status code
   async getThoughts(req, res) {
     try {
       const thoughts = await Thought.find();
@@ -68,7 +68,7 @@ module.exports = {
     }
   },
   // Deletes a thought from the database. Looks for an thought by ID.
-  // Then if the app exists, we look for any users associated with the app based on he app ID and update the applications array for the User.
+  // Then if the thought exists, we look for any users associated with the thought based on the thought ID and update the thoughts array for the User.
   async deleteThought(req, res) {
     try {
       const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
@@ -94,7 +94,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Adds a reaction to a thought. This method is unique in that we add the entire body of the reaction rather than the ID with the mongodb $addToSet operator.
+  // Adds a reaction to a thought. This method adds the entire body of the reaction rather than the ID with the mongodb $addToSet operator.
   async addReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
